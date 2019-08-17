@@ -115,7 +115,9 @@ AUTH_USER_MODEL='user.User'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'zh-hans'
+LANGUAGE_CODE = 'zh-Hans'
+
+DEFAULT_CHARSET='utf-8'
 
 TIME_ZONE = 'Asia/Shanghai'
 
@@ -150,4 +152,8 @@ SESSION_CACHE_ALIAS = "default"
 
 LOGIN_URL='/user/login'
 
-# DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
+DEFAULT_FILE_STORAGE='utils.fdfs.storage.FDFSStorage'
+
+FDFS_CLIENT_CONF='./utils/fdfs/client.conf'
+
+FDFS_URL='http://127.0.0.1:8888/'
