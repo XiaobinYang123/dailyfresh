@@ -44,7 +44,8 @@ class GoodsSKU(BaseModel):
         db_table = 'df_goods_sku'
         verbose_name = '商品'
         verbose_name_plural = verbose_name
-
+    def __str__(self):
+        return self.name
 
 class Goods(BaseModel):
     '''商品SPU模型类'''
@@ -56,6 +57,8 @@ class Goods(BaseModel):
         db_table = 'df_goods'
         verbose_name = '商品SPU'
         verbose_name_plural = verbose_name
+    def __str__(self):
+        return self.name
 
 
 class GoodsImage(BaseModel):
@@ -74,6 +77,7 @@ class IndexGoodsBanner(BaseModel):
     sku = models.ForeignKey('GoodsSKU', verbose_name='商品')
     image = models.ImageField(upload_to='banner', verbose_name='图片')
     index = models.SmallIntegerField(default=0, verbose_name='展示顺序')
+
 
     class Meta:
         db_table = 'df_index_banner'
@@ -102,9 +106,11 @@ class IndexTypeGoodsBanner(BaseModel):
 class IndexPromotionBanner(BaseModel):
     '''首页促销活动模型类'''
     name = models.CharField(max_length=20, verbose_name='活动名称')
-    url = models.URLField(verbose_name='活动链接')
+    url = models.CharField(max_length=256, verbose_name='活动链接')
     image = models.ImageField(upload_to='banner', verbose_name='活动图片')
     index = models.SmallIntegerField(default=0, verbose_name='展示顺序')
+    def __str__(self):
+        return self.name
 
     class Meta:
         db_table = 'df_index_promotion'
