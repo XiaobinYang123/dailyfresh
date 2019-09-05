@@ -6,7 +6,7 @@ from db.base_model import BaseModel
 
 
 class OrderInfo(BaseModel):
-    '''订单模型类'''
+
     PAY_METHODS = {
         '1': "货到付款",
         '2': "微信支付",

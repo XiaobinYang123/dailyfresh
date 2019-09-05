@@ -19,4 +19,4 @@ urlpatterns = [
 ]
 
 
-    # url(r'^active/(?P<token>.*)$', ActiveView.as_view(), name='active'), # 用户激活
+    # url(r'^active/(?P<token>.*)$', ActiveView.as_view(), name='active'), # 
